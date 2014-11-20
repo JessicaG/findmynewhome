@@ -15,7 +15,9 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
-
+gem 'rubillow'
+gem 'nokogiri', '~> 1.5.0'
+gem 'mechanize'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
