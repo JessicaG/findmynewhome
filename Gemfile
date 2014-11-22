@@ -19,7 +19,7 @@ gem 'rubillow'
 gem 'nokogiri', '~> 1.5.0'
 gem 'mechanize'
 gem 'gmaps4rails'
-
+gem 'geocoder'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

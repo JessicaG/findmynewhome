@@ -6,13 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-zpid:
-created_at:
-updated_at:
-street:
-zipcode:
-city:
-state:
-latitude:
-longitude:
-price:
+# zpid:
+# created_at:
+# updated_at:
+# street:
+# zipcode:
+# city:
+# state:
+# latitude:
+# longitude:
+# price:

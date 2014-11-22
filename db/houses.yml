@@ -25,12 +25,12 @@ House 1:
   latitude:
   longitude:
   price: "$350,000"
-  House 2:
-    zpid:"13618346"
-    street: "6761 S Greenwood St"
-    zipcode: "80120"
-    city: "Littleton"
-    state: "CO"
-    latitude:
-      longitude:
-        price: "$350,000"
+House 2:
+  zpid:"13618346"
+  street: "6761 S Greenwood St"
+  zipcode: "80120"
+  city: "Littleton"
+  state: "CO"
+  latitude:
+  longitude:
+  price: "$350,000"
