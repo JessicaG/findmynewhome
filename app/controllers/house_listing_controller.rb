@@ -1,4 +1,4 @@
-class HouseListingController < ActionController::Base
+class HouseListingController < ApplicationController
 
   def index
     @houses = HouseListing.all
@@ -6,6 +6,11 @@ class HouseListingController < ActionController::Base
       marker.lat house.latitude
       marker.lng house.longitude
     end
-    binding.pry
   end
+
+  def new
+    @house = HouseListing.new
+  end
+
+
 end
