@@ -16,7 +16,7 @@ class HouseListingImporter
   end
 
   def zillow_result_urls(first_page, last_page)
-    (first_page..last_page).collect {|i| "http://www.zillow.com/homes/for_sale/CO/10_rid/days_sort/41.541478,-101.925659,36.412442,-109.176636_rect/6_zm/#{i}_p/" } 
+    (first_page..last_page).collect {|i| "http://www.zillow.com/homes/for_sale/Denver-CO/11093_rid/days_sort/39.923429,-104.629326,39.606217,-105.082512_rect/#{i}_zm/" } 
   end
   
     

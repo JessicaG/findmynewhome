@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20141120024030) do
     t.string   "zipcode"
     t.string   "city"
     t.string   "state"
-    t.string   "latitude"
-    t.string   "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "price"
   end
 
