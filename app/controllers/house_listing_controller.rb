@@ -1,11 +1,18 @@
 class HouseListingController < ApplicationController
 
   def index
-    @houses = HouseListing.all
+    @houses = HouseListing.where.not(zipcode: nil)
     @hash = Gmaps4rails.build_markers(@houses) do |house, marker|
       marker.lat house.latitude
       marker.lng house.longitude
-    end
+      marker.infowindow house.street
+      marker.json ({"city" => marker.city})
+      marker.picture ({
+        "url" => "https://s3-us-west-2.amazonaws.com/turingproject/items/images/fmnh-favicon-sm.png",
+        "width" => 32,
+        "height" => 32
+        })
+      end
   end
 
   def new
