@@ -4,11 +4,7 @@ class SchoolListing < ActiveRecord::Base
     Faraday.get("http://api.greatschools.org/schools/nearby?key=ENV[GSCHOOLID]&city=#{@city}&state=CO")
   end
 
-  def school_rating
-    Faraday.get("http://api.greatschools.org/schools/[components]?key=ENV[GSCHOOLID]")
-  end
-
-  def parsed_school
+  def parsed_school_information
     doc = Nokogiri::XML(school_list)
     begin
       self.gsid = doc.at('gsID').content
