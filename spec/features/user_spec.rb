@@ -11,5 +11,9 @@ describe 'As a User', type: :feature do
       expect(page).to have_link('Sign in with Twitter')
     end
 
+    it 'has a house listing' do
+      expect(page).to have_css('#map')
+    end
+
   end
 end
