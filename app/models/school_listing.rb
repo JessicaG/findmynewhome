@@ -26,6 +26,7 @@ class SchoolListing < ActiveRecord::Base
       self.save!
     rescue
       puts "THIS RECORD IS BLANK #{self}"
+    end
   end
 
   def parsed_school_rating
