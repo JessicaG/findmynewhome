@@ -6,7 +6,7 @@
     <h3>Find my new Colorado Home!</h3>
       <p>Choose cities:</p>
       <form action="" style="form-inline">
-        <select multiple name="filter" id="city-filter" class="chosen-select">
+        <select multiple name="filter" id="city-filter" class="chosen-select" >
           <% @houses.map(&:city).uniq do |city| %>
             <option value="<%=city%>"><%=city%></option>
           <% end %>
@@ -22,10 +22,13 @@
   <table class="table table-hover">
     <th> House Results </th>
     <th> City </th>
+    <th> Price </th>
     <% @houses.each do |house| %>
     <tr>
       <td><%= house.id %></td>
+      <td><%= link_to item.title, item_path(item) %></td>
       <td><%= house.city %></td>
+      <td><%= house.price %></td>
     </tr>
       <% end %>
   </table>
