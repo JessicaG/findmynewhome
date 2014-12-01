@@ -14,7 +14,7 @@ class HouseListing < ActiveRecord::Base
     self.state = doc.at('state').content
     self.latitude = doc.at('latitude').content
     self.longitude = doc.at('longitude').content
-    self.price = doc.at('amount currency').to_s
+    self.price = doc.at('amount currency').content
     self.save!
     rescue
       puts "FUCK YOU! #{self}"

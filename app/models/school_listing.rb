@@ -1,7 +1,7 @@
 class SchoolListing < ActiveRecord::Base
 
   def school_list
-    Faraday.get("http://api.greatschools.org/schools/nearby?key=ENV[GSCHOOLID]&city=#{@city}&state=CO")
+    Faraday.get("http://api.greatschools.org/schools/nearby?key=#{ENV['GSCHOOLID']}&city=#{@city}&state=CO")
   end
 
   def parsed_school_information
