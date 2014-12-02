@@ -4,6 +4,7 @@ class HouseListing < ActiveRecord::Base
     def populate_property
     property = Rubillow::HomeValuation.zestimate({ :zpid => zpid })
     if property.success?
+      string = "http://www.zillow.com/webservice/GetZestimate.htm?zws-id=#{ENV['ZWSID']}&zpid=#{zpid}"
       listing = Net::HTTP.get(URI.parse("http://www.zillow.com/webservice/GetZestimate.htm?zws-id=#{ENV['ZWSID']}&zpid=#{zpid}"))
     end
     doc = Nokogiri::XML(listing)
@@ -14,9 +15,10 @@ class HouseListing < ActiveRecord::Base
     self.state = doc.at('state').content
     self.latitude = doc.at('latitude').content
     self.longitude = doc.at('longitude').content
-    self.price = doc.at('amount currency').content
+    self.price = doc.at('amount[currency]').content
+    self.home_link = doc.at('homedetails').content
     self.save!
-    rescue
+    rescue => e
       puts "FUCK YOU! #{self}"
     end
   end

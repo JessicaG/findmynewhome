@@ -6,7 +6,7 @@ class HouseListingController < ApplicationController
       marker.lat house.latitude
       marker.lng house.longitude
       marker.infowindow house.street
-      # marker.json ({"city" => marker.city})
+      marker.title house.city
       marker.picture ({
         "url" => "https://s3-us-west-2.amazonaws.com/turingproject/items/images/fmnh-favicon-sm.png",
         "width" => 32,

@@ -1,8 +1,7 @@
 require 'open-uri'
 class HouseListingImporter
-  #todo add alias for script to not get kicked off
+  
   def import(first_page, last_page)
-    #todo dynamically generate number based on how many zillow results there are
    zillow_result_urls(first_page, last_page).each do |url|
      ids_from_url(url).each {|zpid| HouseListing.find_or_create_by(zpid: zpid)}
      sleep(10)
@@ -16,7 +15,7 @@ class HouseListingImporter
   end
 
   def zillow_result_urls(first_page, last_page)
-    (first_page..last_page).collect {|i| "http://www.zillow.com/homes/for_sale/1-_beds/days_sort/40.344451,-103.827667,39.1684,-106.272125_rect/8_zm/#{i}_p/"} 
+    (first_page..last_page).collect {|i| "http://www.zillow.com/homes/for_sale/1-_beds/days_sort/40.344451,-103.827667,39.1684,-106.272125_rect/8_zm/#{i}_p/"}
   end
 
 
