@@ -19,5 +19,10 @@ class HouseListingController < ApplicationController
     @house = HouseListing.new
   end
 
+  def show
+    source = HouseListing.find(params[:id])
+    @house_listing = HouseListingDecorater.new(source)
+  end
+
 
 end

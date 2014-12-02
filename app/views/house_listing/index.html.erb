@@ -3,7 +3,7 @@
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-12">
-    <h3>Find my new Colorado Home!</h3>
+    <h3>Help me find my crib, yo!</h3>
       <p>Choose cities:</p>
       <form action="" style="form-inline">
         <select multiple name="filter" id="city-filter" class="chosen-select" >
@@ -20,14 +20,12 @@
 
 <div class="col-md-4">
   <table class="table table-hover">
-    <th> House Results </th>
     <th> City </th>
     <th> Price </th>
     <% @houses.each do |house| %>
     <tr>
-      <td><%= house.id %></td>
       <td><%= house.city %></td>
-      <td><%= house.price %></td>
+      <td><%=print_price(house.price) %></td>
     </tr>
       <% end %>
   </table>
