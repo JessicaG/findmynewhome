@@ -12,10 +12,24 @@
           <% end %>
         </select>
       </form>
-    </div>
+      <p>Choose Price Range</p>
+      <div class="checkbox">
+        <label>
+            <input type="checkbox">$100k-$200k</input>
+        </label>
+        <label>
+            <input type="checkbox">$200k-$300k</input>
+        </label>
+        <label>
+            <input type="checkbox">$300k-$400k</input>
+        </label>
+        <label>
+            <input type="checkbox">$400k-$500k</input>
+       </label>
+  </div>
 
 <div class="col-md-8">
-  <div id="map" style='width: 800px; height: 400px;'></div>
+  <div id="multi_markers" style='width: 800px; height: 400px;'></div>
 </div>
 
 <div class="col-md-4">
@@ -30,11 +44,14 @@
       <% end %>
   </table>
 </div>
+<% @houses.sort_by do |house| %>
+  <%= house.price %>
+<% end %>
 </div>
 </div>
 <script>
 handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+handler.buildMap({ provider: {}, internal: {id: 'multi_markers'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();

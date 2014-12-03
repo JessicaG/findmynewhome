@@ -14,6 +14,6 @@ class AddSchoolInfoToSchoolListings < ActiveRecord::Migration
     add_column :school_listings, :phone, :string
     add_column :school_listings, :website, :string
     add_column :school_listings, :latitude, :float
-    add_column :school_listings, :longitude, :string
+    add_column :school_listings, :longitude, :float
   end
 end

@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20141202011415) do
     t.string   "phone"
     t.string   "website"
     t.float    "latitude"
-    t.string   "longitude"
+    t.float    "longitude"
   end
 
   create_table "users", force: true do |t|

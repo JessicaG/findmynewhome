@@ -18,9 +18,14 @@ class HouseListing < ActiveRecord::Base
     self.price = doc.at('amount[currency]').content
     self.home_link = doc.at('homedetails').content
     self.save!
-    rescue => e
+    rescue
       puts "FUCK YOU! #{self}"
     end
+  end
+
+  def price_grouping
+    @houses = HouseListing.where.not(zipcode: nil)
+    houses.price
   end
 
 end
