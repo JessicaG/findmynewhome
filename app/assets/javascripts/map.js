@@ -8,11 +8,11 @@ $(function(){
 
 var fetchSchools = function(){
   $.getJSON('/api/schools', function(data){
-    window.allSchools = []#data.schools
+    window.allSchools = [] // data.schools
     schools.each |school|
-      school.marker = new GMaps.Marker(color:, long: , lat: ) 
+      school.marker = new GMaps.Marker(color:, long: , lat: )
       window.allSchools.push(school)
-    //{schools: [{...}, {...}]} 
+    {schools: [{...}, {...}]}
   });
 }
 
@@ -22,7 +22,7 @@ var applyFilters = function(){
     return marker.serviceObject.title === selectedCities[0]
   });
   var visibleSchools = _.filter(window.allSchools, function(school){
-    return school.name === selectedCities[0] 
+    return school.name === selectedCities[0]
   })
   _.each(markers, function(marker){marker.serviceObject.setVisible(false)})
   _.each(visibleMarkers, function(marker){marker.serviceObject.setVisible(true)})

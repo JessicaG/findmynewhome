@@ -2,7 +2,6 @@ class HouseListingController < ApplicationController
 
   def index
     @houses = HouseListing.last(10)
-    @schools = SchoolListing.all
     @hash = Gmaps4rails.build_markers(@houses) do |house, marker|
       marker.lat house.latitude
       marker.lng house.longitude
@@ -15,9 +14,7 @@ class HouseListingController < ApplicationController
         "height" => 32
         })
       end
-    #@hash = HouseMarkers.build(@houses)
-    #@hash.merge(SchoolMarkers.build(@schools))
-  end
+    end
 
   def new
     @house = HouseListing.new
