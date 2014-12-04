@@ -1,4 +1,4 @@
-class SchoolListingController < ApplicationController
+class Api::SchoolListingController < ApiController
   respond_to :json, :html
 
   def index
