@@ -4,11 +4,12 @@ class HouseListingController < ApplicationController
     @houses = HouseListing.where.not(zipcode: nil)
     @schools = SchoolListing.all
     places = @schools + @houses
+
     @hash = Gmaps4rails.build_markers(places) do |place, marker|
         marker.lat place.latitude
         marker.lng place.longitude
         marker.title place.city
-        #marker.infowindow place.name
+        marker.infowindow place.full_address
         if place.class == HouseListing
           #marker.name place.price
           marker.picture ({

@@ -1,7 +1,7 @@
 
 class HouseListing < ActiveRecord::Base
 
-    def populate_property
+  def populate_property
     property = Rubillow::HomeValuation.zestimate({ :zpid => zpid })
     if property.success?
       string = "http://www.zillow.com/webservice/GetZestimate.htm?zws-id=#{ENV['ZWSID']}&zpid=#{zpid}"
@@ -27,5 +27,19 @@ class HouseListing < ActiveRecord::Base
     @houses = HouseListing.where.not(zipcode: nil)
     houses.price
   end
+
+  def full_address
+    "#{street}\n
+    #{city}, #{state}, #{zipcode}\n
+    #{home_link}, #{price}"
+  end
+
+  def f_address
+
+  end
+
+  # def cities
+  #   @houses = HouseListing.map(&:city).uniq
+  # end
 
 end

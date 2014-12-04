@@ -16,8 +16,6 @@ class SchoolListing < ActiveRecord::Base
   end
 
   def self.build_from_doc(school)
-    #require 'pry'
-    #binding.pry
     begin
     attrs = {
       gsid: school.at('gsId').content,
@@ -40,5 +38,14 @@ class SchoolListing < ActiveRecord::Base
     end
     new(attrs).save
   end
+
+  def full_address
+    "School Name#{name}: #{school_rating}\n\n #{street_address}, #{city}, #{state} #{phone}"
+  end
+
+  # def cities
+  #   @schools = SchoolListing.all
+  #   @schools.map(&:city).uniq
+  # end
 
 end

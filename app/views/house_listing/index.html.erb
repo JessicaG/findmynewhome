@@ -34,11 +34,11 @@
 
 <div class="col-md-4">
   <table class="table table-hover">
-    <th> City </th>
+    <th> Address </th>
     <th> Price </th>
     <% @houses.each do |house| %>
     <tr>
-      <td><%= house.city %></td>
+      <td><%= house.full_address %></td>
       <td><%=print_price(house.price) %></td>
     </tr>
       <% end %>
