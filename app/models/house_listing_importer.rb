@@ -7,6 +7,7 @@ class HouseListingImporter
      sleep(10)
      puts "Collected from a URL, sleeping for 10 seconds"
    end
+   ZillowWorker.perform_async('1,10',45)
   end
 
   def ids_from_url(url)

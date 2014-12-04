@@ -11,3 +11,14 @@ var applyFilters = function(){
   _.each(markers, function(marker){marker.serviceObject.setVisible(false)})
   _.each(visibleMarkers, function(marker){marker.serviceObject.setVisible(true)})
 }
+
+function toggleBounce() {
+
+  if (marker.getAnimation() != null) {
+      marker.setAnimation(null);
+    } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
